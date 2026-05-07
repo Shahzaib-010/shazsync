@@ -35,11 +35,5 @@
   font-weight: 800;
 }
 
-/* Lenis Smooth Scrolling */
-html {
-  scroll-behavior: auto;
-}
 
-body {
-  overflow: hidden;
-}
+

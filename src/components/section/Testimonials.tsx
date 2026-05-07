@@ -109,7 +109,7 @@ export default function Testimonials() {
           className="relative min-h-105 overflow-hidden rounded-3xl lg:min-h-full"
         >
           <Image
-            src="/images/card1.jpg"
+            src="/images/card3.jpg"
             alt="testimonial"
             fill
             className="object-cover"
