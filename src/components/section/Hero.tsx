@@ -1,8 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import Link from "next/link";
 import Button from "../ui/Button";
 
 const fadeUp = {
@@ -12,7 +10,7 @@ const fadeUp = {
 
 function Hero() {
   return (
-    <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-[url('/Background.avif')] bg-cover  bg-[position:center_-120px] text-black">
+    <section className="relative flex min-h-[65vh] w-full items-center overflow-hidden bg-[url('/Background.avif')] bg-cover  bg-[position:center_-180px] text-black">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -24,7 +22,7 @@ function Hero() {
         <motion.h1
           variants={fadeUp}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 max-w-6xl font-[family-name:var(--font-clash-display)] text-5xl font-semibold leading-tight md:text-6xl"
+          className="mt-25 max-w-6xl font-[family-name:var(--font-clash-display)] text-5xl font-semibold leading-tight md:text-6xl"
         >
           Everything is louder
           <span className="block">when it&apos;s in Sync.</span>
@@ -38,9 +36,10 @@ function Hero() {
           className="mt-10"
         >
             <Button
-                text="Let&apos;s Sync"
+                text="Contact Us"
                 bgColor="bg-black"
                 textColor="text-white"
+                dotColor="bg-orange-500"
                 />
         
         </motion.div>
