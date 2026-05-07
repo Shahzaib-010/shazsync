@@ -220,8 +220,14 @@ function Navbar() {
                                         <ArrowUpRight size={18} strokeWidth={2} />
                                     </Link>
 
-                                    <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border-[10px] border-cyan-300/70 shadow-[0_0_30px_rgba(34,211,238,0.65),inset_0_0_24px_rgba(255,255,255,0.35)] rotate-[-28deg]" />
-                                    <div className="absolute left-[58%] top-[56%] h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border-[10px] border-blue-500/70 shadow-[0_0_30px_rgba(59,130,246,0.65),inset_0_0_24px_rgba(255,255,255,0.3)] rotate-[36deg]" />
+                                    <video
+                                        src="/videos/hf_20260418_080021_d598092b-c4c2-4e53-8e46-94cf9064cd50.mp4"
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="absolute inset-0 h-full w-full object-cover rounded-[28px] opacity-60"
+                                    />
                                 </motion.div>
 
                                 <motion.div

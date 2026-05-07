@@ -10,7 +10,7 @@ const fadeUp = {
 
 function GetStarted() {
   return (
-    <section className="w-full bg-white px-3 py-4 md:px-5 md:py-6">
+    <section className="w-full bg-[#F6F6F6] px-3 py-4 md:px-5 md:py-6">
       <motion.div
         initial="hidden"
         whileInView="visible"

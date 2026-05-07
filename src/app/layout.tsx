@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "../components/section/Navbar";
 import Footer from "../components/section/Footer";
+import CursorFollower from "../components/ui/CursorFollower";
+import LenisProvider from "../components/providers/LenisProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,9 +76,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${openSans.variable} ${clashDisplay.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <LenisProvider>
+          <CursorFollower />
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );

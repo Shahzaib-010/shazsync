@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import { useRef, useState } from "react";
 
 export type WorkCardProps = {
   title: string;
@@ -19,12 +20,42 @@ const tagStyles = [
 ];
 
 function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    setCursorPos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+    if (typeof window !== 'undefined') {
+      (window as any).__hideCursorFollower?.(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+    if (typeof window !== 'undefined') {
+      (window as any).__hideCursorFollower?.(false);
+    }
+  };
   return (
     <article className="group w-[82vw] shrink-0 md:w-[54vw] lg:w-[36vw] xl:w-[30.5rem]">
       <motion.div
+        ref={containerRef}
         initial="rest"
         animate="rest"
         whileHover="hover"
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         className="relative aspect-[1.18/1] overflow-hidden rounded-[7px] bg-neutral-200 shadow-sm ring-1 ring-black/5"
       >
         <div className="absolute left-2 top-2 z-20 flex flex-wrap gap-2">
@@ -76,6 +107,34 @@ function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
         </motion.div>
 
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/5 opacity-70" />
+
+        {/* Hover Circle Overlay */}
+        <motion.div
+          className="pointer-events-none absolute inset-0"
+          variants={{
+            rest: { opacity: 0 },
+            hover: { opacity: 1 },
+          }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+          <div
+            className="absolute flex items-center justify-center rounded-full bg-black"
+            style={{
+              left: `${cursorPos.x}px`,
+              top: `${cursorPos.y}px`,
+              transform: 'translate(-50%, -50%)',
+              width: isHovering ? '120px' : '0px',
+              height: isHovering ? '120px' : '0px',
+              transition: 'width 0.5s ease-out, height 0.5s ease-out',
+            }}
+          >
+            {isHovering && (
+              <span className="text-lg font-semibold text-white open-sans-semibold">
+                View
+              </span>
+            )}
+          </div>
+        </motion.div>
       </motion.div>
 
       <h3 className="mt-5 text-xl font-[family-name:var(--font-clash-display)]  tracking-normal text-neutral-950 md:text-xl">
