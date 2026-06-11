@@ -1,39 +1,4 @@
 @import "tailwindcss";
 
-:root {
-  --font-open-sans: 'Open Sans', sans-serif;
-}
-
-/* Open Sans Font Classes */
-.open-sans-light {
-  font-family: var(--font-open-sans);
-  font-weight: 300;
-}
-
-.open-sans-regular {
-  font-family: var(--font-open-sans);
-  font-weight: 400;
-}
-
-.open-sans-medium {
-  font-family: var(--font-open-sans);
-  font-weight: 500;
-}
-
-.open-sans-semibold {
-  font-family: var(--font-open-sans);
-  font-weight: 600;
-}
-
-.open-sans-bold {
-  font-family: var(--font-open-sans);
-  font-weight: 700;
-}
-
-.open-sans-extrabold {
-  font-family: var(--font-open-sans);
-  font-weight: 800;
-}
-
 
 

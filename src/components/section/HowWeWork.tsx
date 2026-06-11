@@ -21,7 +21,7 @@ function HowWeWork() {
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="text-lg  font-[family-name:var(--font-clash-display)] leading-none md:col-span-2 lg:col-span-1"
+          className="text-lg leading-none md:col-span-2 lg:col-span-1"
         >
           <span aria-hidden="true" className="mr-1">
             -&gt;
@@ -34,10 +34,10 @@ function HowWeWork() {
           transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl"
         >
-          <h2 className="font-[family-name:var(--font-clash-display)] text-3xl font-semibold leading-tight tracking-normal md:text-3xl">
+          <h2 className="text-2xl font-semibold leading-tight tracking-normal sm:text-3xl md:text-3xl">
             Our Approach
           </h2>
-          <p className="mt-5 text-lg leading-[1.38] font-[family-name:var(--font-clash-display)] tracking-wide text-neutral-800 md:text-[18px]">
+          <p className="mt-5 text-sm leading-[1.38] tracking-wide text-neutral-800 sm:text-base md:text-[18px]">
             We&apos;re obsessed with crafting exceptional design experiences
             that leave a lasting impression. Our approach is simple: strategy
             first, magic later. We kick off every project with a deep dive into
@@ -60,10 +60,10 @@ function HowWeWork() {
           transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl"
         >
-          <h2 className="font-[family-name:var(--font-clash-display)] text-3xl font-semibold leading-tight tracking-normal md:text-3xl">
+          <h2 className="text-2xl font-semibold leading-tight tracking-normal sm:text-3xl md:text-3xl">
             What to Expect
           </h2>
-          <p className="mt-5 font-[family-name:var(--font-clash-display)] text-lg leading-[1.38] tracking-wide text-neutral-800 md:text-[18px]">
+          <p className="mt-5 text-sm leading-[1.38] tracking-wide text-neutral-800 sm:text-base md:text-[18px]">
             Our team of motion, 3D, UI, and branding experts collaborate
             closely with you to bring your vision to life. We&apos;re
             perfectionists at heart, obsessing over every detail to deliver

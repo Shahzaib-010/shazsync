@@ -94,7 +94,7 @@ function SelectedWorksSection() {
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="font-[family-name:var(--font-clash-display)] text-3xl font-semibold leading-none tracking-normal text-neutral-950 md:text-5xl"
+              className="text-2xl font-semibold leading-none tracking-normal sm:text-3xl md:text-4xl lg:text-5xl text-neutral-950"
           >
             Selected Works
           </motion.h2>

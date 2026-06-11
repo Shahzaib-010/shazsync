@@ -43,7 +43,7 @@ function GetStarted() {
           <motion.h2
             variants={fadeUp}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="font-[family-name:var(--font-clash-display)] text-[clamp(3rem,8vw,4rem)] font-semibold leading-[0.9] tracking-normal"
+            className="text-[clamp(3rem,8vw,4rem)] font-semibold leading-[0.9] tracking-normal"
           >
             Start your project
             <span className="block">with ShazSync</span>

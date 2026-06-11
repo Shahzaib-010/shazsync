@@ -53,7 +53,7 @@ function Navbar() {
             transition={{ duration: 0.28, ease: "easeOut" }}
             className="fixed left-0 top-0 z-50 flex h-20 w-full items-center"
         >
-            <div className="relative mx-auto flex w-[95%] items-center justify-between">
+            <div className="relative mx-auto flex w-full items-center justify-between px-4 sm:px-5 md:w-[95%] md:px-0">
                 <Link href="/" aria-label="Shazsync home" className="inline-flex">
                     <Image
                         src="/shazsynclogo.svg"
@@ -70,10 +70,10 @@ function Navbar() {
                         aria-label="Open menu"
                         aria-expanded={isOpen}
                         onClick={() => setIsOpen((current) => !current)}
-                        className="relative z-20 grid size-12 place-items-center rounded-full border border-white/20 bg-neutral-950 text-white shadow-[0_14px_34px_rgba(0,0,0,0.22)] transition-colors hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 md:size-10"
+                        className="relative z-20 grid size-11 place-items-center rounded-full border border-white/20 bg-neutral-950 text-white shadow-[0_14px_34px_rgba(0,0,0,0.22)] transition-colors hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 sm:size-12 md:size-10"
                         whileTap={{ scale: 0.94 }}
                     >
-                        <Plus size={24} strokeWidth={1.8} />
+                        <Plus size={20} strokeWidth={1.8} className="sm:size-6" />
                     </motion.button>
                 </div>
             </div>
@@ -114,13 +114,13 @@ function Navbar() {
                             }}
                             transition={{ duration: 0.48, ease: [0.22, 1, 0.36, 1] }}
                             style={{ originX: 1, originY: 0 }}
-                            className="fixed right-0 top-0 z-50 flex h-[100svh] w-full flex-col overflow-hidden bg-white px-7 pb-7 pt-8 shadow-[0_30px_90px_rgba(0,0,0,0.18)] md:right-3 md:top-3 md:h-[calc(100svh-24px)] md:w-[52vw] md:rounded-[44px] md:px-9 md:pb-9 md:pt-10 xl:w-[49vw]"
+                            className="fixed right-0 top-0 z-50 flex h-svh w-full flex-col overflow-hidden bg-white px-5 pb-5 pt-6 shadow-[0_30px_90px_rgba(0,0,0,0.18)] sm:px-6 sm:pb-6 sm:pt-7 md:right-3 md:top-3 md:h-[calc(100svh-24px)] md:w-[52vw] md:rounded-[44px] md:px-9 md:pb-9 md:pt-10 xl:w-[49vw]"
                         >
                             <motion.button
                                 type="button"
                                 aria-label="Close menu"
                                 onClick={() => setIsOpen(false)}
-                                className="absolute right-5 top-5 grid size-14 place-items-center rounded-full bg-neutral-100 text-black transition-colors hover:bg-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 md:right-4 md:top-4 md:size-16"
+                                className="absolute right-5 top-5 grid size-12 place-items-center rounded-full bg-neutral-100 text-black transition-colors hover:bg-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 sm:size-14 md:right-4 md:top-4 md:size-16"
                                 initial={{ opacity: 0, scale: 0.7, rotate: -45 }}
                                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                                 exit={{ opacity: 0, scale: 0.7, rotate: 45 }}
@@ -142,7 +142,7 @@ function Navbar() {
                                         transition: { staggerChildren: 0.035, staggerDirection: -1 },
                                     },
                                 }}
-                                className="flex flex-col pr-20"
+                                className="flex flex-col gap-2 pr-4 sm:pr-8 md:pr-20"
                             >
                                 {navItems.map((item) => (
                                     <motion.li
@@ -156,7 +156,7 @@ function Navbar() {
                                         <Link
                                             href={item.href}
                                             onClick={() => setIsOpen(false)}
-                                            className="block w-fit font-[family-name:var(--font-clash-display)] text-4xl font-semibold leading-[1.08] tracking-normal text-black transition-transform duration-300 hover:translate-x-2 md:text-[clamp(2.1rem,3vw,4.25rem)]"
+                                            className="block w-fit text-2xl font-semibold leading-[1.08] tracking-normal text-black transition-transform duration-300 hover:translate-x-2 sm:text-3xl md:text-4xl md:text-[clamp(2.1rem,3vw,4.25rem)]"
                                         >
                                             {item.label}
                                         </Link>

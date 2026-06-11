@@ -62,7 +62,7 @@ function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
           {tags.map((tag, index) => (
             <span
               key={`${title}-${tag}`}
-              className={`rounded-md px-3 py-1.5 text-sm font-[family-name:var(--font-clash-display)] leading-none md:text-base ${
+              className={`rounded-md px-3 py-1.5 text-sm leading-none md:text-base ${
                 tagStyles[index % tagStyles.length]
               }`}
             >
@@ -129,7 +129,7 @@ function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
             }}
           >
             {isHovering && (
-              <span className="text-lg font-semibold text-white open-sans-semibold">
+              <span className="text-lg font-semibold text-white">
                 View
               </span>
             )}
@@ -137,7 +137,7 @@ function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
         </motion.div>
       </motion.div>
 
-      <h3 className="mt-5 text-xl font-[family-name:var(--font-clash-display)]  tracking-normal text-neutral-950 md:text-xl">
+      <h3 className="mt-5 text-xl tracking-normal text-neutral-950 md:text-xl">
         {title}
       </h3>
     </article>

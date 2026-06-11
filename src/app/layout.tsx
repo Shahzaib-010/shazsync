@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "../components/section/Navbar";
@@ -7,56 +6,20 @@ import Footer from "../components/section/Footer";
 import CursorFollower from "../components/ui/CursorFollower";
 import LenisProvider from "../components/providers/LenisProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
-const clashDisplay = localFont({
+const karigaar = localFont({
   src: [
     {
-      path: "../../public/fonts/ClashDisplay-Extralight.otf",
-      weight: "200",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/ClashDisplay-Light.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/ClashDisplay-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/ClashDisplay-Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/ClashDisplay-Semibold.otf",
+      path: "../../public/fonts/karigaarSans-semibold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../public/fonts/ClashDisplay-Bold.otf",
+      path: "../../public/fonts/karigaarSans-bold.ttf",
       weight: "700",
       style: "normal",
     },
   ],
-  variable: "--font-clash-display",
+  variable: "--font-karigaar",
   display: "swap",
 });
 
@@ -73,9 +36,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${openSans.variable} ${clashDisplay.variable} h-full antialiased`}
+      className={`${karigaar.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className={`${karigaar.className} min-h-full flex flex-col`}>
         <LenisProvider>
           <CursorFollower />
           <Navbar />

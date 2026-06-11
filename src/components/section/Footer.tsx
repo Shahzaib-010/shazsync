@@ -54,7 +54,7 @@ function Footer() {
 
           {/* Useful Links */}
           <div className="col-span-1">
-            <h3 className="font-medium text-black text-md mb-6 font-[family-name:var(--font-clash-display)]">
+            <h3 className="mb-6 text-md font-medium text-black">
               Useful Link
             </h3>
             <ul className="space-y-4">
@@ -73,7 +73,7 @@ function Footer() {
 
           {/* Product Links */}
           <div className="col-span-1">
-            <h3 className="font-medium text-black text-md mb-6 font-[family-name:var(--font-clash-display)]">
+            <h3 className="mb-6 text-md font-medium text-black">
               Product
             </h3>
             <ul className="space-y-4">
@@ -92,7 +92,7 @@ function Footer() {
 
           {/* Company Links */}
           <div className="col-span-1">
-            <h3 className="font-medium text-black text-md mb-6 font-[family-name:var(--font-clash-display)]">
+            <h3 className="mb-6 text-md font-medium text-black">
               Company
             </h3>
             <ul className="space-y-4">
@@ -111,7 +111,7 @@ function Footer() {
 
           {/* Social Links */}
           <div className="col-span-1">
-            <h3 className="font-medium text-black text-md mb-6 font-[family-name:var(--font-clash-display)]">
+            <h3 className="mb-6 text-md font-medium text-black">
               Follow
             </h3>
             <div className="flex gap-4">
