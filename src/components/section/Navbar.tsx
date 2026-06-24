@@ -1,10 +1,11 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowUpRight, Camera, Globe, Plus, X } from "lucide-react";
+import { ArrowUpRight, Plus, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { socialLinks } from "./socialLinks";
 
 const navItems = [
     { label: "Home", href: "/" },
@@ -12,17 +13,6 @@ const navItems = [
     { label: "Work", href: "/work" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
-];
-
-const panelLinks = [
-    { label: "Buy template", href: "/contact" },
-    { label: "More templates", href: "/work" },
-];
-
-const socialLinks = [
-    { label: "Instagram", href: "https://instagram.com", icon: Camera },
-    { label: "X", href: "https://x.com", icon: X },
-    { label: "Website", href: "/", icon: Globe },
 ];
 
 function Navbar() {
@@ -173,32 +163,20 @@ function Navbar() {
                                     className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between"
                                 >
                                     <div className="flex flex-wrap gap-3">
-                                        {panelLinks.map((item) => (
-                                            <Link
-                                                key={item.label}
-                                                href={item.href}
-                                                onClick={() => setIsOpen(false)}
-                                                className="inline-flex h-11 items-center gap-5 rounded-full bg-neutral-100 px-5 text-sm font-semibold text-black transition-colors hover:bg-neutral-200"
-                                            >
-                                                {item.label}
-                                                <span className="size-1 rounded-full bg-red-500" />
-                                            </Link>
-                                        ))}
-                                    </div>
-
-                                    <div className="flex gap-3">
                                         {socialLinks.map((item) => {
                                             const Icon = item.icon;
 
                                             return (
-                                                <Link
+                                                <a
                                                     key={item.label}
                                                     href={item.href}
                                                     aria-label={item.label}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
                                                     className="grid size-12 place-items-center rounded-full border border-neutral-200 bg-white text-black transition-colors hover:bg-neutral-100"
                                                 >
                                                     <Icon size={21} strokeWidth={2} />
-                                                </Link>
+                                                </a>
                                             );
                                         })}
                                     </div>

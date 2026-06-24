@@ -16,7 +16,7 @@ function GetStarted() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
         transition={{ staggerChildren: 0.12, delayChildren: 0.05 }}
-        className="relative mx-auto flex min-h-[72svh] w-full max-w-[calc(100vw-24px)] items-center justify-center overflow-hidden rounded-[24px] bg-black px-5 py-20 text-center text-white shadow-[0_22px_45px_rgba(0,0,0,0.22)] md:min-h-[82svh] md:rounded-[10px] md:px-10"
+        className="relative mx-auto flex min-h-72svh w-full items-center justify-center overflow-hidden rounded-[24px] bg-black px-5 py-20 text-center text-white shadow-[0_22px_45px_rgba(0,0,0,0.22)] md:min-h-[82svh] md:rounded-[10px] md:px-10"
       >
         <div
           aria-hidden="true"

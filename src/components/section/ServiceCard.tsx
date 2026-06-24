@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import { Plus } from "lucide-react";
 
 export type ServiceCardProps = {
   index: number;
@@ -16,10 +17,10 @@ export type ServiceCardProps = {
 function CornerMarks({ color }: { color: string }) {
   return (
     <>
-      <span className={`absolute left-3 top-3 text-xl leading-none ${color}`}>+</span>
-      <span className={`absolute right-3 top-3 text-xl leading-none ${color}`}>+</span>
-      <span className={`absolute bottom-3 left-3 text-xl leading-none ${color}`}>+</span>
-      <span className={`absolute bottom-3 right-3 text-xl leading-none ${color}`}>+</span>
+      <span className={`absolute left-3 top-3 ${color}`}><Plus size={14} strokeWidth={1.2} /></span>
+      <span className={`absolute right-3 top-3 ${color}`}><Plus size={14} strokeWidth={1.2} /></span>
+      <span className={`absolute bottom-3 left-3 ${color}`}><Plus size={14} strokeWidth={1.2} /></span>
+      <span className={`absolute bottom-3 right-3 ${color}`}><Plus size={14} strokeWidth={1.2} /></span>
     </>
   );
 }

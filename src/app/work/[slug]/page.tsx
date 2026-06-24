@@ -40,7 +40,7 @@ export default async function CaseStudyPage({ params }: Props) {
     <main className="bg-white">
 
       {/* ── Header ── */}
-      <div className="mx-auto w-[95%] px-4 pt-28 md:px-0 md:pt-32">
+      <div className="mx-auto w-[95%] pt-28 md:pt-32">
         <div className="flex items-start justify-between gap-4">
           <div className="flex flex-col gap-3">
             <Link
@@ -88,14 +88,14 @@ export default async function CaseStudyPage({ params }: Props) {
       </div>
 
       {/* ── Brief para ── */}
-      <div className="mx-auto w-[95%] px-4 pt-10 md:px-0 md:pt-12">
+      <div className="mx-auto w-[95%] pt-10 md:pt-12">
         <p className="max-w-xl text-base leading-relaxed text-neutral-700 md:text-[17px]">
           {project.brief}
         </p>
       </div>
 
       {/* ── Two columns: Problem+Solution (left) | View Live (right) ── */}
-      <div className="mx-auto w-[95%] px-4 pb-16 pt-10 md:px-0 md:pb-20 md:pt-12">
+      <div className="mx-auto w-[95%] pb-16 pt-10 md:pb-20 md:pt-12">
         <div className="grid gap-10 md:grid-cols-[auto_minmax(0,520px)] md:gap-16">
 
           {/* Left — View Live only */}
@@ -138,7 +138,7 @@ export default async function CaseStudyPage({ params }: Props) {
       {/* ── Detail section — Outcome as editorial block ── */}
       {outcomeSection && (
         <div className="border-t border-neutral-100">
-          <div className="mx-auto w-[95%] px-4 py-16 md:px-0 md:py-24">
+          <div className="mx-auto w-[95%] py-16 md:py-24">
             <h2 className="text-3xl leading-tight text-neutral-950 md:text-4xl [font-family:var(--font-karigaar)]">
               {outcomeSection.heading}
             </h2>
@@ -154,7 +154,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
       {/* ── Explore More ── */}
       <div className="border-t border-neutral-100 bg-[#f8f8f8]">
-        <div className="mx-auto w-[95%] px-4 py-16 md:px-0 md:py-20">
+        <div className="mx-auto w-[95%] py-16 md:py-20">
           <h2 className="text-2xl text-neutral-950 md:text-3xl [font-family:var(--font-karigaar)]">
             Explore More
           </h2>

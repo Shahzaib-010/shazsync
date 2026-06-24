@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "../components/section/Navbar";
 import Footer from "../components/section/Footer";
 import CursorFollower from "../components/ui/CursorFollower";
+import PageLoader from "../components/ui/PageLoader";
 import LenisProvider from "../components/providers/LenisProvider";
 
 const karigaar = localFont({
@@ -48,6 +49,7 @@ export default function RootLayout({
     >
       <body className={`${karigaar.className} min-h-full flex flex-col`}>
         <LenisProvider>
+          <PageLoader />
           <CursorFollower />
           <Navbar />
           <main className="flex-1">{children}</main>

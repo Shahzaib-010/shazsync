@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Globe, Camera } from "lucide-react";
+import { socialLinks } from "./socialLinks";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,12 +23,6 @@ function Footer() {
   const legalLinks = [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Use", href: "/terms" },
-  ];
-
-  const socialLinks = [
-    { icon: Mail, href: "mailto:shazsync@gmail.com", label: "Email" },
-    { icon: Camera, href: "https://instagram.com", label: "Instagram" },
-    { icon: Globe, href: "https://shazsync.com", label: "Website" },
   ];
 
   return (
@@ -106,11 +100,11 @@ function Footer() {
           {/* Follow */}
           <div className="col-span-1">
             <h3 className="mb-6 text-sm font-semibold text-black">Follow</h3>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               {socialLinks.map((link) => {
                 const Icon = link.icon;
                 return (
-                  <Link
+                  <a
                     key={link.label}
                     href={link.href}
                     aria-label={link.label}
@@ -119,7 +113,7 @@ function Footer() {
                     className="text-neutral-600 transition-colors hover:text-black"
                   >
                     <Icon size={20} strokeWidth={2} />
-                  </Link>
+                  </a>
                 );
               })}
             </div>

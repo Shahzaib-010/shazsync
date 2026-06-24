@@ -57,7 +57,7 @@ function SelectedWorksSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#F6F6F6]"
+      className="relative overflow-x-clip bg-[#F6F6F6]"
       style={{ height: `calc(100svh + ${travelDistance}px)` }}
     >
       <div className="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden bg-[#F6F6F6] py-10 md:py-12">
