@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <section className="bg-[#f6f4ef]">
-      <div className="mx-auto w-[95%] pb-20 pt-24 md:pb-24 md:pt-28">
+      <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%] pb-20 pt-24 md:pb-24 md:pt-28">
         <h1 className="max-w-4xl text-[clamp(3.25rem,5vw,4.9rem)] leading-[0.9] tracking-0 text-neutral-950">
           Selected Works
         </h1>

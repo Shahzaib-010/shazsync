@@ -17,7 +17,7 @@ function HowWeWork() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
         transition={{ staggerChildren: 0.1, delayChildren: 0.05 }}
-        className="mx-auto grid w-[95%] gap-12 md:grid-cols-2 md:gap-x-16 lg:grid-cols-[1fr_1fr_1fr] lg:gap-x-24"
+        className="mx-auto grid w-[90%] sm:w-[95%] gap-12 md:grid-cols-2 md:gap-x-16 lg:grid-cols-[1fr_1fr_1fr] lg:gap-x-24"
       >
         <motion.div
           variants={fadeUp}

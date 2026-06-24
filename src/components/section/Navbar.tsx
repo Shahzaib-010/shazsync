@@ -43,7 +43,7 @@ function Navbar() {
             transition={{ duration: 0.28, ease: "easeOut" }}
             className="fixed left-0 top-0 z-50 flex h-16 w-full items-center"
         >
-            <div className="relative mx-auto flex w-[95%] items-center justify-between">
+            <div className="relative mx-auto flex w-[90%] sm:w-[95%] items-center justify-between">
                 <Link href="/" aria-label="Shazsync home" className="inline-flex">
                     <Image
                         src="/shazsynclogo.svg"
@@ -132,7 +132,7 @@ function Navbar() {
                                         transition: { staggerChildren: 0.035, staggerDirection: -1 },
                                     },
                                 }}
-                                className="flex flex-col gap-2 pr-4 sm:pr-8 md:pr-20"
+                                className="flex flex-col gap-1 pr-4 sm:pr-8 md:pr-20"
                             >
                                 {navItems.map((item) => (
                                     <motion.li
@@ -146,7 +146,7 @@ function Navbar() {
                                         <Link
                                             href={item.href}
                                             onClick={() => setIsOpen(false)}
-                                            className="block w-fit text-2xl font-semibold leading-[1.08] tracking-normal text-black transition-transform duration-300 hover:translate-x-2 sm:text-3xl md:text-4xl md:text-[clamp(2.1rem,3vw,4.25rem)]"
+                                            className="block w-fit text-[clamp(2.6rem,10vw,4.25rem)] font-semibold leading-[1.05] tracking-normal text-black transition-transform duration-300 hover:translate-x-2 md:text-[clamp(2.1rem,3vw,4.25rem)]"
                                         >
                                             {item.label}
                                         </Link>
@@ -187,12 +187,12 @@ function Navbar() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 12 }}
                                     transition={{ duration: 0.34, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
-                                    className="relative min-h-44 overflow-hidden rounded-[28px] bg-black p-6 text-white md:min-h-56"
+                                    className="relative min-h-44 overflow-hidden rounded-[28px] bg-black p-6 text-white sm:min-h-52 md:min-h-56"
                                 >
                                     <Link
                                         href="/contact"
                                         onClick={() => setIsOpen(false)}
-                                        className="relative z-10 inline-flex items-center gap-1 text-lg font-semibold"
+                                        className="relative z-10 inline-flex items-center gap-1 text-sm font-medium"
                                     >
                                         Contact
                                         <ArrowUpRight size={18} strokeWidth={2} />

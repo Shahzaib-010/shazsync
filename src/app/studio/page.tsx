@@ -73,7 +73,7 @@ export default function StudioPage() {
     <main>
       {/* Header */}
       <section className="bg-white">
-        <div className="mx-auto w-[95%] pb-20 pt-24 md:pb-28 md:pt-28">
+        <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%] pb-20 pt-24 md:pb-28 md:pt-28">
           {/* Service tag pills */}
           <div className="mb-10 flex flex-wrap gap-2">
             {services.map(({ title, color }) => (
@@ -111,7 +111,7 @@ export default function StudioPage() {
 
       {/* Mission */}
       <section className="bg-[#f5f5f5] py-20 md:py-28">
-        <div className="mx-auto w-[95%]">
+        <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
           <p className="max-w-5xl text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.15] tracking-normal text-neutral-950">
             Design that looks right. Development that runs fast. Marketing that
             lands. SEO that lasts.
@@ -146,7 +146,7 @@ export default function StudioPage() {
 
       {/* Stats */}
       <section className="bg-white py-16 md:py-20">
-        <div className="mx-auto w-[95%]">
+        <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
           <div className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-0 md:divide-x md:divide-neutral-200">
             {stats.map(({ value, label }) => (
               <div key={label} className="flex flex-col gap-3 md:px-8 lg:px-12">
@@ -164,7 +164,7 @@ export default function StudioPage() {
 
       {/* Services overview */}
       <section className="bg-[#f5f5f5] py-20 md:py-28">
-        <div className="mx-auto w-[95%]">
+        <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
           <div className="grid gap-12 md:grid-cols-[0.75fr_1fr] md:gap-16 lg:gap-24">
             <div>
               <p className="text-lg leading-none">
@@ -208,7 +208,7 @@ export default function StudioPage() {
 
       {/* Values */}
       <section className="bg-white py-20 md:py-28">
-        <div className="mx-auto w-[95%]">
+        <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
           <p className="text-lg leading-none">
             <MoveRight size={16} className="mr-2 inline-block" aria-hidden="true" />
             What we stand for

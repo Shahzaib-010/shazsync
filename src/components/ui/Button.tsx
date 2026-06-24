@@ -30,13 +30,17 @@ const Button = ({
         group
         inline-flex
         items-center
-        gap-4
-        px-5
-        py-3
+        gap-3
+        px-4
+        py-2
+        sm:gap-4
+        sm:px-5
+        sm:py-3
         rounded-full
         ${bgColor}
         ${textColor}
-        text-sm
+        text-xs
+        sm:text-sm
         font-light
         tracking-wide
         overflow-hidden

@@ -42,7 +42,7 @@ const sideTestimonials = [
 export default function Testimonials() {
   return (
     <section className="w-full bg-[#F5F5F5] py-12 lg:py-20">
-      <div className="mx-auto w-[95%]">
+      <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-[0.8fr_0.95fr_0.95fr] lg:items-stretch lg:min-h-130">
 
           {/* LEFT CONTENT */}

@@ -54,7 +54,7 @@ export default function FAQ() {
 
   return (
     <section className="w-full bg-[#f5f5f5] py-16 text-neutral-950 md:py-24">
-      <div className="mx-auto w-[95%]">
+      <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
 
         {/* Header */}
         <div className="mb-10 flex items-end justify-between gap-6 md:mb-12">
@@ -76,7 +76,7 @@ export default function FAQ() {
         </div>
 
         {/* Accordion */}
-        <div className="mx-auto w-[70%] divide-y divide-neutral-300 border-b border-neutral-300">
+        <div className="w-full divide-y divide-neutral-300 border-b border-neutral-300">
           {faqs.map((faq, i) => (
             <div key={faq.question}>
               <button

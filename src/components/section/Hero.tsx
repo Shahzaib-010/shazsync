@@ -15,7 +15,7 @@ function Hero() {
         initial="hidden"
         animate="visible"
         transition={{ staggerChildren: 0.12, delayChildren: 0.08 }}
-        className="relative z-10 mx-auto flex w-[95%] flex-col items-center text-center"
+        className="relative z-10 mx-auto flex w-[90%] sm:w-[95%] flex-col items-center text-center"
       >
        
 

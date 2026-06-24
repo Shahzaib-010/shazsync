@@ -61,7 +61,7 @@ function SelectedWorksSection() {
       style={{ height: `calc(100svh + ${travelDistance}px)` }}
     >
       <div className="sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden bg-[#F6F6F6] py-10 md:py-12">
-        <div className="mx-auto mb-10 flex w-[95%] items-center justify-between gap-6 md:mb-12">
+        <div className="mx-auto mb-10 flex w-[90%] sm:w-[95%] items-center justify-between gap-6 md:mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}

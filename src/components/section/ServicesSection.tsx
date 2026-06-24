@@ -41,7 +41,7 @@ const services: ServiceCardProps[] = [
 function ServicesSection() {
   return (
     <section className="w-full bg-[#f5f5f5] py-16 text-neutral-950 md:py-24 lg:py-28">
-      <div className="mx-auto w-[95%]">
+      <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
         <motion.h2
           initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}

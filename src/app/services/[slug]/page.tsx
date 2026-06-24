@@ -33,7 +33,7 @@ export default async function ServicePage({ params }: Props) {
 
       {/* ── Hero ── */}
       <section style={{ backgroundColor: service.color }} className="pb-16 pt-32 md:pb-24 md:pt-40">
-        <div className="mx-auto w-[95%]">
+        <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
           <Link
             href="/studio"
             className="inline-flex items-center gap-1.5 text-sm text-neutral-600 transition-colors hover:text-neutral-900"
@@ -68,7 +68,7 @@ export default async function ServicePage({ params }: Props) {
 
       {/* ── What we offer ── */}
       <section className="bg-white py-20 md:py-28">
-        <div className="mx-auto w-[95%]">
+        <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
           <p className="flex items-center gap-2 text-sm text-neutral-500">
             <MoveRight size={15} aria-hidden="true" />
             What we offer
@@ -104,7 +104,7 @@ export default async function ServicePage({ params }: Props) {
 
       {/* ── Process ── */}
       <section className="bg-[#f7f7f7] py-20 md:py-28">
-        <div className="mx-auto w-[95%]">
+        <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
           <p className="flex items-center gap-2 text-sm text-neutral-500">
             <MoveRight size={15} aria-hidden="true" />
             How it works
@@ -137,7 +137,7 @@ export default async function ServicePage({ params }: Props) {
 
       {/* ── Other services ── */}
       <section className="bg-white py-20 md:py-28">
-        <div className="mx-auto w-[95%]">
+        <div className="mx-auto w-[90%] sm:w-[90%] sm:w-[95%]">
           <p className="flex items-center gap-2 text-sm text-neutral-500">
             <MoveRight size={15} aria-hidden="true" />
             Explore more

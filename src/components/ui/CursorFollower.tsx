@@ -16,6 +16,8 @@ export default function CursorFollower() {
   const hidden = useRef(false);
 
   useEffect(() => {
+    if (window.innerWidth < 1000) return;
+
     window.__hideCursorFollower = (hide: boolean) => {
       hidden.current = hide;
     };
@@ -54,7 +56,7 @@ export default function CursorFollower() {
   return (
     <div
       ref={dotRef}
-      className="pointer-events-none fixed left-0 top-0 z-9999 size-3 rounded-full bg-black"
+      className="pointer-events-none fixed left-0 top-0 z-9999 size-3 rounded-full bg-black hidden min-[1000px]:block"
       style={{ opacity: 0, willChange: "transform" }}
     />
   );

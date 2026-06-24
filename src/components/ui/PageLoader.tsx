@@ -46,16 +46,26 @@ export default function PageLoader() {
             transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
             className="fixed inset-x-0 top-0 z-99999 flex h-1/2 flex-col justify-between bg-neutral-950 px-[2.5%] pb-6 pt-8"
           >
-            {/* Top-right counter */}
+            {/* Top-right label */}
             <div className="flex justify-end">
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.25, duration: 0.4 }}
-                className="text-xs tabular-nums text-white/30 font-(--font-sans)"
+                className="text-[10px] uppercase tracking-[0.3em] text-white/20 font-(--font-sans)"
               >
-                {String(count).padStart(3, "0")}
+                Creative Studio
               </motion.span>
+            </div>
+
+            {/* Progress bar — bottom edge of top panel, exits with it */}
+            <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-white/5">
+              <motion.div
+                className="h-full bg-orange-500"
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 2.2, ease: "linear" }}
+              />
             </div>
 
             {/* Staggered letter reveal */}
@@ -78,15 +88,6 @@ export default function PageLoader() {
             </div>
           </motion.div>
 
-          {/* ── Progress seam ── */}
-          <div className="fixed inset-x-0 top-1/2 z-99999 h-[3px] -translate-y-1/2 bg-white/5">
-            <motion.div
-              className="h-full bg-orange-500"
-              initial={{ width: "0%" }}
-              animate={{ width: "100%" }}
-              transition={{ duration: 2.2, ease: "linear" }}
-            />
-          </div>
 
           {/* ── Bottom half ── */}
           <motion.div
@@ -106,15 +107,18 @@ export default function PageLoader() {
               Everything is louder when it&apos;s in Sync.
             </motion.p>
 
-            {/* Bottom label */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-[10px] uppercase tracking-[0.3em] text-white/20 font-(--font-sans)"
-            >
-              Creative Studio
-            </motion.p>
+            {/* Bottom row: counter right */}
+            <div className="flex items-end justify-end">
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
+                className="tabular-nums leading-none text-white/60 [font-family:var(--font-karigaar)]"
+                style={{ fontSize: "clamp(2.6rem,10vw,8.5rem)" }}
+              >
+                {String(count).padStart(3, "0")}
+              </motion.span>
+            </div>
           </motion.div>
         </>
       )}
