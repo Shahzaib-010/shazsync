@@ -1,44 +1,43 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Mail, Globe, Share2 } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { Mail, Globe, Camera } from "lucide-react";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const usefulLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Solutions', href: '/solutions' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Contact', href: '/contact' },
+  const exploreLinks = [
+    { label: "Home", href: "/" },
+    { label: "Studio", href: "/studio" },
+    { label: "Work", href: "/work" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contact", href: "/contact" },
   ];
 
-  const productLinks = [
-    { label: 'Product Teams', href: '/product-teams' },
-    { label: 'Finance Teams', href: '/finance-teams' },
-    { label: 'Data Teams', href: '/data-teams' },
+  const serviceLinks = [
+    { label: "Design", href: "/services/design" },
+    { label: "Development", href: "/services/development" },
+    { label: "Marketing", href: "/services/marketing" },
+    { label: "SEO", href: "/services/seo" },
   ];
 
-  const companyLinks = [
-    { label: 'Sign up', href: '/signup' },
-    { label: 'Login', href: '/login' },
-    { label: 'More Templates', href: '/templates' },
+  const legalLinks = [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Use", href: "/terms" },
   ];
 
   const socialLinks = [
-    { icon: Mail, href: 'mailto:hello@shazsync.com', label: 'Email' },
-    { icon: Globe, href: 'https://shazsync.com', label: 'Website' },
-    { icon: Share2, href: 'https://twitter.com', label: 'Share' },
+    { icon: Mail, href: "mailto:shazsync@gmail.com", label: "Email" },
+    { icon: Camera, href: "https://instagram.com", label: "Instagram" },
+    { icon: Globe, href: "https://shazsync.com", label: "Website" },
   ];
 
   return (
-    <footer className="bg-[#F6F6F6]  text-black  ">
-      <div className="mx-auto max-w-[95%] px-6 py-16 md:py-10">
-        {/* Main Footer Content */}
+    <footer className="bg-[#F6F6F6] text-black">
+      <div className="mx-auto w-[95%] py-16 md:py-10">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-5 lg:grid-cols-6">
-          {/* Logo and Description */}
+          {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="inline-flex mb-6">
+            <Link href="/" className="mb-6 inline-flex">
               <Image
                 src="/shazsynclogo.svg"
                 alt="Shazsync"
@@ -47,22 +46,21 @@ function Footer() {
                 priority
               />
             </Link>
-            <p className="text-neutral-600 text-sm leading-relaxed max-w-xs">
-              Manage it all with a fully customizable, no code platform
+            <p className="max-w-xs text-sm leading-relaxed text-neutral-600">
+              A full-service creative agency combining design, development,
+              marketing, and SEO — everything working together, in sync.
             </p>
           </div>
 
-          {/* Useful Links */}
+          {/* Explore */}
           <div className="col-span-1">
-            <h3 className="mb-6 text-md font-medium text-black">
-              Useful Link
-            </h3>
+            <h3 className="mb-6 text-sm font-semibold text-black">Explore</h3>
             <ul className="space-y-4">
-              {usefulLinks.map((link) => (
+              {exploreLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-neutral-600 text-sm hover:text-black transition-colors"
+                    className="text-sm text-neutral-600 transition-colors hover:text-black"
                   >
                     {link.label}
                   </Link>
@@ -71,17 +69,15 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Product Links */}
+          {/* Services */}
           <div className="col-span-1">
-            <h3 className="mb-6 text-md font-medium text-black">
-              Product
-            </h3>
+            <h3 className="mb-6 text-sm font-semibold text-black">Services</h3>
             <ul className="space-y-4">
-              {productLinks.map((link) => (
+              {serviceLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-neutral-600 text-sm hover:text-black transition-colors"
+                    className="text-sm text-neutral-600 transition-colors hover:text-black"
                   >
                     {link.label}
                   </Link>
@@ -90,17 +86,15 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Company Links */}
+          {/* Legal */}
           <div className="col-span-1">
-            <h3 className="mb-6 text-md font-medium text-black">
-              Company
-            </h3>
+            <h3 className="mb-6 text-sm font-semibold text-black">Legal</h3>
             <ul className="space-y-4">
-              {companyLinks.map((link) => (
+              {legalLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-neutral-600 text-sm hover:text-black transition-colors"
+                    className="text-sm text-neutral-600 transition-colors hover:text-black"
                   >
                     {link.label}
                   </Link>
@@ -109,11 +103,9 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Social Links */}
+          {/* Follow */}
           <div className="col-span-1">
-            <h3 className="mb-6 text-md font-medium text-black">
-              Follow
-            </h3>
+            <h3 className="mb-6 text-sm font-semibold text-black">Follow</h3>
             <div className="flex gap-4">
               {socialLinks.map((link) => {
                 const Icon = link.icon;
@@ -124,7 +116,7 @@ function Footer() {
                     aria-label={link.label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-neutral-600 hover:text-black transition-colors"
+                    className="text-neutral-600 transition-colors hover:text-black"
                   >
                     <Icon size={20} strokeWidth={2} />
                   </Link>
@@ -134,24 +126,22 @@ function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-neutral-200 my-8" />
+        <div className="my-8 border-t border-neutral-200" />
 
-        {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-neutral-600 text-sm">
-            Copyright © {currentYear} Shazsync. All rights reserved.
+        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+          <p className="text-sm text-neutral-600">
+            © {currentYear} Shazsync. All rights reserved.
           </p>
           <div className="flex gap-8">
             <Link
               href="/terms"
-              className="text-neutral-600 text-sm hover:text-black transition-colors"
+              className="text-sm text-neutral-600 transition-colors hover:text-black"
             >
               Terms of Use
             </Link>
             <Link
               href="/privacy"
-              className="text-neutral-600 text-sm hover:text-black transition-colors"
+              className="text-sm text-neutral-600 transition-colors hover:text-black"
             >
               Privacy Policy
             </Link>

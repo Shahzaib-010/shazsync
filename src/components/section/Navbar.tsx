@@ -51,9 +51,9 @@ function Navbar() {
                 boxShadow: isPastHero ? "0 12px 34px rgba(0, 0, 0, 0.08)" : "0 0 0 rgba(0, 0, 0, 0)",
             }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="fixed left-0 top-0 z-50 flex h-20 w-full items-center"
+            className="fixed left-0 top-0 z-50 flex h-16 w-full items-center"
         >
-            <div className="relative mx-auto flex w-full items-center justify-between px-4 sm:px-5 md:w-[95%] md:px-0">
+            <div className="relative mx-auto flex w-[95%] items-center justify-between">
                 <Link href="/" aria-label="Shazsync home" className="inline-flex">
                     <Image
                         src="/shazsynclogo.svg"
@@ -70,10 +70,10 @@ function Navbar() {
                         aria-label="Open menu"
                         aria-expanded={isOpen}
                         onClick={() => setIsOpen((current) => !current)}
-                        className="relative z-20 grid size-11 place-items-center rounded-full border border-white/20 bg-neutral-950 text-white shadow-[0_14px_34px_rgba(0,0,0,0.22)] transition-colors hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 sm:size-12 md:size-10"
+                        className="relative z-20 grid size-8 place-items-center rounded-full border border-white/20 bg-neutral-950 text-white shadow-[0_14px_34px_rgba(0,0,0,0.22)] transition-colors hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 sm:size-9"
                         whileTap={{ scale: 0.94 }}
                     >
-                        <Plus size={20} strokeWidth={1.8} className="sm:size-6" />
+                        <Plus size={16} strokeWidth={1.8} />
                     </motion.button>
                 </div>
             </div>

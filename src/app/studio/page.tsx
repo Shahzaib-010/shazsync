@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { MoveRight, ArrowRight } from "lucide-react";
 import GetStarted from "../../components/section/GetStarted";
 
 export const metadata: Metadata = {
@@ -72,7 +73,7 @@ export default function StudioPage() {
     <main>
       {/* Header */}
       <section className="bg-white">
-        <div className="mx-auto w-full px-4 pb-20 pt-24 sm:px-5 md:w-[95%] md:px-0 md:pb-28 md:pt-28">
+        <div className="mx-auto w-[95%] pb-20 pt-24 md:pb-28 md:pt-28">
           {/* Service tag pills */}
           <div className="mb-10 flex flex-wrap gap-2">
             {services.map(({ title, color }) => (
@@ -109,8 +110,8 @@ export default function StudioPage() {
       </section>
 
       {/* Mission */}
-      <section className="bg-[#f5f5f5] px-4 py-20 sm:px-5 md:py-28">
-        <div className="mx-auto w-full md:w-[95%]">
+      <section className="bg-[#f5f5f5] py-20 md:py-28">
+        <div className="mx-auto w-[95%]">
           <p className="max-w-5xl text-[clamp(1.75rem,3.5vw,3rem)] leading-[1.15] tracking-normal text-neutral-950">
             Design that looks right. Development that runs fast. Marketing that
             lands. SEO that lasts.
@@ -135,7 +136,8 @@ export default function StudioPage() {
                 href="/contact"
                 className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-neutral-950 underline underline-offset-4 transition-colors hover:text-orange-500"
               >
-                Sounds like what you need? Let&apos;s talk →
+                Sounds like what you need? Let&apos;s talk
+                <ArrowRight size={14} className="ml-1 inline-block" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -143,8 +145,8 @@ export default function StudioPage() {
       </section>
 
       {/* Stats */}
-      <section className="bg-white px-4 py-16 sm:px-5 md:py-20">
-        <div className="mx-auto w-full md:w-[95%]">
+      <section className="bg-white py-16 md:py-20">
+        <div className="mx-auto w-[95%]">
           <div className="grid grid-cols-2 gap-10 md:grid-cols-4 md:gap-0 md:divide-x md:divide-neutral-200">
             {stats.map(({ value, label }) => (
               <div key={label} className="flex flex-col gap-3 md:px-8 lg:px-12">
@@ -161,14 +163,12 @@ export default function StudioPage() {
       </section>
 
       {/* Services overview */}
-      <section className="bg-[#f5f5f5] px-4 py-20 sm:px-5 md:py-28">
-        <div className="mx-auto w-full md:w-[95%]">
+      <section className="bg-[#f5f5f5] py-20 md:py-28">
+        <div className="mx-auto w-[95%]">
           <div className="grid gap-12 md:grid-cols-[0.75fr_1fr] md:gap-16 lg:gap-24">
             <div>
               <p className="text-lg leading-none">
-                <span aria-hidden="true" className="mr-1">
-                  -&gt;
-                </span>
+                <MoveRight size={16} className="mr-2 inline-block" aria-hidden="true" />
                 What we do
               </p>
               <p className="mt-6 max-w-xs text-sm leading-7 text-neutral-600">
@@ -207,12 +207,10 @@ export default function StudioPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-white px-4 py-20 sm:px-5 md:py-28">
-        <div className="mx-auto w-full md:w-[95%]">
+      <section className="bg-white py-20 md:py-28">
+        <div className="mx-auto w-[95%]">
           <p className="text-lg leading-none">
-            <span aria-hidden="true" className="mr-1">
-              -&gt;
-            </span>
+            <MoveRight size={16} className="mr-2 inline-block" aria-hidden="true" />
             What we stand for
           </p>
 

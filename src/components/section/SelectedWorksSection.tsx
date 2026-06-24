@@ -89,7 +89,7 @@ function SelectedWorksSection() {
           className="flex w-max gap-4 px-[2.5vw] will-change-transform md:gap-5 lg:gap-6"
         >
           {workItems.map((work) => (
-            <WorkCard key={work.title} {...work} />
+            <WorkCard key={work.slug} {...work} track />
           ))}
         </motion.div>
       </div>

@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
-/* h1, h2 inherit Karigaar from <body> */
-/* Everything else uses Open Sans */
-h3, h4, h5, h6,
-p,
-label,
-input,
-textarea,
-select,
-button {
-  font-family: var(--font-sans);
+@layer base {
+  h3, h4, h5, h6,
+  p,
+  label,
+  input,
+  textarea,
+  select,
+  button {
+    font-family: var(--font-sans);
+  }
 }

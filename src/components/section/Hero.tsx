@@ -15,7 +15,7 @@ function Hero() {
         initial="hidden"
         animate="visible"
         transition={{ staggerChildren: 0.12, delayChildren: 0.08 }}
-        className="relative z-10 mx-auto flex w-[95%] flex-col items-center px-4 text-center"
+        className="relative z-10 mx-auto flex w-[95%] flex-col items-center text-center"
       >
        
 
@@ -36,6 +36,7 @@ function Hero() {
         >
             <Button
                 text="Contact Us"
+                href="/contact"
                 bgColor="bg-black"
                 textColor="text-white"
                 dotColor="bg-orange-500"

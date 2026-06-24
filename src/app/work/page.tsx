@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <section className="bg-[#f6f4ef]">
-      <div className="mx-auto w-full px-4 pb-20 pt-24 sm:px-5 md:w-[95%] md:px-0 md:pb-24 md:pt-28">
+      <div className="mx-auto w-[95%] pb-20 pt-24 md:pb-24 md:pt-28">
         <h1 className="max-w-4xl text-[clamp(3.25rem,5vw,4.9rem)] leading-[0.9] tracking-0 text-neutral-950">
           Selected Works
         </h1>
@@ -34,7 +34,7 @@ export default function WorkPage() {
 
         <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:mt-20 lg:gap-7">
           {workItems.map((work) => (
-            <WorkCard key={work.title} {...work} layout="grid" />
+            <WorkCard key={work.slug} {...work} />
           ))}
         </div>
       </div>

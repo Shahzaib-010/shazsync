@@ -7,6 +7,7 @@ const services: ServiceCardProps[] = [
   {
     index: 1,
     title: "Design",
+    slug: "design",
     backgroundColor: "bg-[#efc7ff]",
     description:
       "From brand identity to UI/UX, we craft visual systems that communicate clearly and convert. Every pixel is intentional — built to reflect your brand and move your audience.",
@@ -14,6 +15,7 @@ const services: ServiceCardProps[] = [
   {
     index: 2,
     title: "Development",
+    slug: "development",
     backgroundColor: "bg-[#ffb271]",
     description:
       "We build fast, scalable websites and web applications that perform as well as they look. Clean code, optimised delivery, and seamless CMS integrations for teams that need to move quickly.",
@@ -21,6 +23,7 @@ const services: ServiceCardProps[] = [
   {
     index: 3,
     title: "Marketing",
+    slug: "marketing",
     backgroundColor: "bg-[#b6d3ee]",
     description:
       "Strategy-led marketing that grows your brand across the right channels. From paid campaigns to content and social, we connect your business with the people who matter most.",
@@ -28,6 +31,7 @@ const services: ServiceCardProps[] = [
   {
     index: 4,
     title: "SEO",
+    slug: "seo",
     backgroundColor: "bg-[#fff0d8]",
     description:
       "Technical SEO, on-page optimisation, and content strategy that move you up the rankings and keep you there. We audit, fix, and build long-term organic growth into everything we do.",
@@ -36,8 +40,8 @@ const services: ServiceCardProps[] = [
 
 function ServicesSection() {
   return (
-    <section className="w-full bg-[#f5f5f5] px-4 py-16 text-neutral-950 md:px-6 md:py-24 lg:py-28">
-      <div className="mx-auto w-[98%]">
+    <section className="w-full bg-[#f5f5f5] py-16 text-neutral-950 md:py-24 lg:py-28">
+      <div className="mx-auto w-[95%]">
         <motion.h2
           initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}

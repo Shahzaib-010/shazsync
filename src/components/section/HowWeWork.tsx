@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { MoveRight } from "lucide-react";
 import Button from "../ui/Button";
 
 const fadeUp = {
@@ -10,22 +11,20 @@ const fadeUp = {
 
 function HowWeWork() {
   return (
-    <section className="w-full bg-[#f5f5f5] px-5 py-24 text-neutral-950 md:py-32 lg:py-40">
+    <section className="w-full bg-[#f5f5f5] py-24 text-neutral-950 md:py-32 lg:py-40">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
         transition={{ staggerChildren: 0.1, delayChildren: 0.05 }}
-        className="mx-auto grid w-[95%] max-w-7xl gap-12 md:grid-cols-2 md:gap-x-16 lg:grid-cols-[1fr_1fr_1fr] lg:gap-x-24"
+        className="mx-auto grid w-[95%] gap-12 md:grid-cols-2 md:gap-x-16 lg:grid-cols-[1fr_1fr_1fr] lg:gap-x-24"
       >
         <motion.div
           variants={fadeUp}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="text-lg leading-none md:col-span-2 lg:col-span-1"
         >
-          <span aria-hidden="true" className="mr-1">
-            -&gt;
-          </span>
+          <MoveRight size={16} className="mr-2 inline-block" aria-hidden="true" />
           How we work
         </motion.div>
 
@@ -48,6 +47,7 @@ function HowWeWork() {
           <div className="mt-14 hidden lg:block">
            <Button
                 text="Contact Us"
+                href="/contact"
                 bgColor="bg-black"
                 textColor="text-white"
                 dotColor="bg-orange-500"

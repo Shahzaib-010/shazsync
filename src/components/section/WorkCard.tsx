@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { useRef, useState } from "react";
 
@@ -11,28 +12,23 @@ declare global {
 }
 
 export type WorkCardProps = {
+  slug: string;
   title: string;
   tags: string[];
   primaryImage: string;
   hoverImage: string;
-  layout?: "track" | "grid";
+  track?: boolean;
 };
 
 const tagStyles = [
-  "bg-[#f3c9ff] text-neutral-950",
-  "bg-[#cfe6ff] text-neutral-950",
-  "bg-[#ffb067] text-neutral-950",
-  "bg-[#fff0d2] text-neutral-950",
-  "bg-[#dff4d2] text-neutral-950",
+  "bg-[#f3c9ff] text-neutral-800",
+  "bg-[#cfe6ff] text-neutral-800",
+  "bg-[#ffb067] text-neutral-800",
+  "bg-[#dff4d2] text-neutral-800",
+  "bg-[#fff0d8] text-neutral-800",
 ];
 
-function WorkCard({
-  title,
-  tags,
-  primaryImage,
-  hoverImage,
-  layout = "track",
-}: WorkCardProps) {
+function WorkCard({ slug, title, tags, primaryImage, hoverImage, track = false }: WorkCardProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -40,43 +36,32 @@ function WorkCard({
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
-    setCursorPos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    setCursorPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
   const handleMouseEnter = () => {
     setIsHovering(true);
-    if (typeof window !== "undefined") {
-      window.__hideCursorFollower?.(true);
-    }
+    if (typeof window !== "undefined") window.__hideCursorFollower?.(true);
   };
 
   const handleMouseLeave = () => {
     setIsHovering(false);
-    if (typeof window !== "undefined") {
-      window.__hideCursorFollower?.(false);
-    }
+    if (typeof window !== "undefined") window.__hideCursorFollower?.(false);
   };
 
-  const articleClassName =
-    layout === "grid"
-      ? "group flex w-full flex-col"
-      : "group w-[82vw] shrink-0 md:w-[54vw] lg:w-[36vw] xl:w-[30.5rem]";
-
-  const containerClassName =
-    layout === "grid"
-      ? "relative aspect-[1.18/1] overflow-hidden rounded-[12px] bg-neutral-200 shadow-sm ring-1 ring-black/5 md:aspect-[1.14/1]"
-      : "relative aspect-[1.18/1] overflow-hidden rounded-[7px] bg-neutral-200 shadow-sm ring-1 ring-black/5";
-
-  const sizes =
-    layout === "grid"
-      ? "(max-width: 767px) 92vw, (max-width: 1023px) 48vw, 46vw"
-      : "(max-width: 767px) 82vw, (max-width: 1023px) 54vw, (max-width: 1279px) 36vw, 568px";
+  const sizes = track
+    ? "(max-width: 767px) 82vw, (max-width: 1023px) 54vw, (max-width: 1279px) 36vw, 568px"
+    : "(max-width: 639px) 92vw, (max-width: 1023px) 48vw, 32vw";
 
   return (
-    <article className={articleClassName}>
+    <Link
+      href={`/work/${slug}`}
+      className={
+        track
+          ? "group flex shrink-0 w-[82vw] flex-col md:w-[54vw] lg:w-[36vw] xl:w-122"
+          : "group flex w-full flex-col"
+      }
+    >
       <motion.div
         ref={containerRef}
         initial="rest"
@@ -85,21 +70,21 @@ function WorkCard({
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={containerClassName}
+        className="relative aspect-4/3 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50"
       >
-        <div className="absolute left-2 top-2 z-20 flex flex-wrap gap-2">
-          {tags.map((tag, index) => (
+        {/* Tags */}
+        <div className="absolute left-2 top-2 z-20 flex flex-wrap gap-1.5">
+          {tags.map((tag, i) => (
             <span
               key={`${title}-${tag}`}
-              className={`rounded-md px-3 py-1.5 text-sm leading-none md:text-base ${
-                tagStyles[index % tagStyles.length]
-              }`}
+              className={`rounded-md px-2.5 py-1 text-xs font-normal leading-none ${tagStyles[i % tagStyles.length]}`}
             >
               {tag}
             </span>
           ))}
         </div>
 
+        {/* Primary image */}
         <motion.div
           className="absolute inset-0"
           variants={{
@@ -117,6 +102,7 @@ function WorkCard({
           />
         </motion.div>
 
+        {/* Hover image */}
         <motion.div
           className="absolute inset-0 opacity-0"
           variants={{
@@ -135,15 +121,12 @@ function WorkCard({
           />
         </motion.div>
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/5 opacity-70" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/10 via-transparent to-black/5 opacity-70" />
 
-        {/* Hover Circle Overlay */}
+        {/* Cursor bubble */}
         <motion.div
           className="pointer-events-none absolute inset-0"
-          variants={{
-            rest: { opacity: 0 },
-            hover: { opacity: 1 },
-          }}
+          variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <div
@@ -164,10 +147,10 @@ function WorkCard({
         </motion.div>
       </motion.div>
 
-      <h3 className="mt-5 text-xl tracking-normal text-neutral-950 md:text-xl">
+      <h3 className="mt-3 text-sm text-neutral-900 [font-family:var(--font-karigaar)]">
         {title}
       </h3>
-    </article>
+    </Link>
   );
 }
 
