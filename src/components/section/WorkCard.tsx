@@ -4,11 +4,18 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { useRef, useState } from "react";
 
+declare global {
+  interface Window {
+    __hideCursorFollower?: (hide: boolean) => void;
+  }
+}
+
 export type WorkCardProps = {
   title: string;
   tags: string[];
   primaryImage: string;
   hoverImage: string;
+  layout?: "track" | "grid";
 };
 
 const tagStyles = [
@@ -19,7 +26,13 @@ const tagStyles = [
   "bg-[#dff4d2] text-neutral-950",
 ];
 
-function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
+function WorkCard({
+  title,
+  tags,
+  primaryImage,
+  hoverImage,
+  layout = "track",
+}: WorkCardProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -35,19 +48,35 @@ function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
 
   const handleMouseEnter = () => {
     setIsHovering(true);
-    if (typeof window !== 'undefined') {
-      (window as any).__hideCursorFollower?.(true);
+    if (typeof window !== "undefined") {
+      window.__hideCursorFollower?.(true);
     }
   };
 
   const handleMouseLeave = () => {
     setIsHovering(false);
-    if (typeof window !== 'undefined') {
-      (window as any).__hideCursorFollower?.(false);
+    if (typeof window !== "undefined") {
+      window.__hideCursorFollower?.(false);
     }
   };
+
+  const articleClassName =
+    layout === "grid"
+      ? "group flex w-full flex-col"
+      : "group w-[82vw] shrink-0 md:w-[54vw] lg:w-[36vw] xl:w-[30.5rem]";
+
+  const containerClassName =
+    layout === "grid"
+      ? "relative aspect-[1.18/1] overflow-hidden rounded-[12px] bg-neutral-200 shadow-sm ring-1 ring-black/5 md:aspect-[1.14/1]"
+      : "relative aspect-[1.18/1] overflow-hidden rounded-[7px] bg-neutral-200 shadow-sm ring-1 ring-black/5";
+
+  const sizes =
+    layout === "grid"
+      ? "(max-width: 767px) 92vw, (max-width: 1023px) 48vw, 46vw"
+      : "(max-width: 767px) 82vw, (max-width: 1023px) 54vw, (max-width: 1279px) 36vw, 568px";
+
   return (
-    <article className="group w-[82vw] shrink-0 md:w-[54vw] lg:w-[36vw] xl:w-[30.5rem]">
+    <article className={articleClassName}>
       <motion.div
         ref={containerRef}
         initial="rest"
@@ -56,7 +85,7 @@ function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="relative aspect-[1.18/1] overflow-hidden rounded-[7px] bg-neutral-200 shadow-sm ring-1 ring-black/5"
+        className={containerClassName}
       >
         <div className="absolute left-2 top-2 z-20 flex flex-wrap gap-2">
           {tags.map((tag, index) => (
@@ -83,7 +112,7 @@ function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
             src={primaryImage}
             alt={`${title} project preview`}
             fill
-            sizes="(max-width: 767px) 82vw, (max-width: 1023px) 54vw, (max-width: 1279px) 36vw, 568px"
+            sizes={sizes}
             className="object-cover"
           />
         </motion.div>
@@ -101,7 +130,7 @@ function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
             alt=""
             aria-hidden="true"
             fill
-            sizes="(max-width: 767px) 82vw, (max-width: 1023px) 54vw, (max-width: 1279px) 36vw, 568px"
+            sizes={sizes}
             className="object-cover"
           />
         </motion.div>
@@ -122,16 +151,14 @@ function WorkCard({ title, tags, primaryImage, hoverImage }: WorkCardProps) {
             style={{
               left: `${cursorPos.x}px`,
               top: `${cursorPos.y}px`,
-              transform: 'translate(-50%, -50%)',
-              width: isHovering ? '120px' : '0px',
-              height: isHovering ? '120px' : '0px',
-              transition: 'width 0.5s ease-out, height 0.5s ease-out',
+              transform: "translate(-50%, -50%)",
+              width: isHovering ? "120px" : "0px",
+              height: isHovering ? "120px" : "0px",
+              transition: "width 0.5s ease-out, height 0.5s ease-out",
             }}
           >
             {isHovering && (
-              <span className="text-lg font-semibold text-white">
-                View
-              </span>
+              <span className="text-lg font-semibold text-white">View</span>
             )}
           </div>
         </motion.div>

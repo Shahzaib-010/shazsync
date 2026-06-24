@@ -57,7 +57,7 @@ function ServiceCard({
           {title}
         </h3>
 
-        <p className="mt-5 max-w-3xl text-xs leading-relaxed sm:text-sm md:text-base ">
+        <p className="mt-5 max-w-3xl text-xs leading-relaxed sm:text-sm md:text-base font-[var(--font-sans)] ">
           {description}
         </p>
       </div>

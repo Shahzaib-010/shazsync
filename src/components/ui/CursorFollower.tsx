@@ -2,12 +2,18 @@
 
 import { useEffect, useRef } from "react";
 
+declare global {
+  interface Window {
+    __hideCursorFollower?: (hide: boolean) => void;
+  }
+}
+
 // Global variable to track if cursor follower should be hidden
 let shouldHideFollower = false;
 
 // Make it available globally
 if (typeof window !== 'undefined') {
-  (window as any).__hideCursorFollower = (hide: boolean) => {
+  window.__hideCursorFollower = (hide: boolean) => {
     shouldHideFollower = hide;
   };
 }

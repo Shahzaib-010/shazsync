@@ -64,11 +64,10 @@ function HowWeWork() {
             What to Expect
           </h2>
           <p className="mt-5 text-sm leading-[1.38] tracking-wide text-neutral-800 sm:text-base md:text-[18px]">
-            Our team of motion, 3D, UI, and branding experts collaborate
-            closely with you to bring your vision to life. We&apos;re
+            Our team of designers, developers, marketers, and SEO specialists
+            collaborate closely with you to bring your vision to life. We&apos;re
             perfectionists at heart, obsessing over every detail to deliver
-            design solutions that spark meaningful connections with your
-            audience.
+            results that spark meaningful connections with your audience.
           </p>
         </motion.article>
 

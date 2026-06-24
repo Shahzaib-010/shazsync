@@ -3,35 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import Button from "../ui/Button";
-import WorkCard, { type WorkCardProps } from "./WorkCard";
-
-
-const selectedWorks: WorkCardProps[] = [
-  {
-    title: "Bloom",
-    tags: ["Motion", "3D"],
-    primaryImage: "/images/card1.jpg",
-    hoverImage: "/images/card2.jpg",
-  },
-  {
-    title: "Emberly",
-    tags: ["UI", "Branding"],
-    primaryImage: "/images/card2.jpg",
-    hoverImage: "/images/card3.jpg",
-  },
-  {
-    title: "Hive",
-    tags: ["3D"],
-    primaryImage: "/images/card3.jpg",
-    hoverImage: "/images/card4.jpg",
-  },
-  {
-    title: "Signal",
-    tags: ["Strategy", "Web"],
-    primaryImage: "/images/card4.jpg",
-    hoverImage: "/images/card1.jpg",
-  },
-];
+import WorkCard from "./WorkCard";
+import { workItems } from "./workData";
 
 function SelectedWorksSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -115,7 +88,7 @@ function SelectedWorksSection() {
           style={{ x }}
           className="flex w-max gap-4 px-[2.5vw] will-change-transform md:gap-5 lg:gap-6"
         >
-          {selectedWorks.map((work) => (
+          {workItems.map((work) => (
             <WorkCard key={work.title} {...work} />
           ))}
         </motion.div>
@@ -124,5 +97,4 @@ function SelectedWorksSection() {
   );
 }
 
-export { selectedWorks };
 export default SelectedWorksSection;

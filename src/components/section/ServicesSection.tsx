@@ -6,31 +6,31 @@ import ServiceCard, { type ServiceCardProps } from "./ServiceCard";
 const services: ServiceCardProps[] = [
   {
     index: 1,
-    title: "Motion",
+    title: "Design",
     backgroundColor: "bg-[#efc7ff]",
     description:
-      "Elevate your brand's narrative with captivating motion design, engaging and inspiring audiences through animated logos, explainer videos, social media clips, and more, crafted to drive emotional connections.",
+      "From brand identity to UI/UX, we craft visual systems that communicate clearly and convert. Every pixel is intentional — built to reflect your brand and move your audience.",
   },
   {
     index: 2,
-    title: "UI Design",
+    title: "Development",
     backgroundColor: "bg-[#ffb271]",
     description:
-      "Transform your digital presence with intuitive and visually stunning UI design, driving engagement, conversions, and brand loyalty through seamless user experiences, carefully crafted to meet the unique needs of your audience.",
+      "We build fast, scalable websites and web applications that perform as well as they look. Clean code, optimised delivery, and seamless CMS integrations for teams that need to move quickly.",
   },
   {
     index: 3,
-    title: "3D",
+    title: "Marketing",
     backgroundColor: "bg-[#b6d3ee]",
     description:
-      "Unlock new dimensions with our 3D design services, creating immersive experiences that captivate and inspire, from product visualizations and interactive environments to augmented reality and virtual reality experiences.",
+      "Strategy-led marketing that grows your brand across the right channels. From paid campaigns to content and social, we connect your business with the people who matter most.",
   },
   {
     index: 4,
-    title: "Brand Identity",
+    title: "SEO",
     backgroundColor: "bg-[#fff0d8]",
     description:
-      "Discover your brand's unique voice and visual identity with our comprehensive branding services, building a lasting impression through strategic positioning, creative storytelling, impactful design, and expert guidance.",
+      "Technical SEO, on-page optimisation, and content strategy that move you up the rankings and keep you there. We audit, fix, and build long-term organic growth into everything we do.",
   },
 ];
 

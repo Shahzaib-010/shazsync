@@ -120,7 +120,7 @@ function Navbar() {
                                 type="button"
                                 aria-label="Close menu"
                                 onClick={() => setIsOpen(false)}
-                                className="absolute right-5 top-5 grid size-12 place-items-center rounded-full bg-neutral-100 text-black transition-colors hover:bg-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 sm:size-14 md:right-4 md:top-4 md:size-16"
+                                className="absolute right-5 top-5 z-30 grid size-12 place-items-center rounded-full bg-neutral-100 text-black transition-colors hover:bg-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 sm:size-14 md:right-4 md:top-4 md:size-16"
                                 initial={{ opacity: 0, scale: 0.7, rotate: -45 }}
                                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                                 exit={{ opacity: 0, scale: 0.7, rotate: 45 }}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/section/Navbar";
 import Footer from "../components/section/Footer";
@@ -10,7 +11,7 @@ const karigaar = localFont({
   src: [
     {
       path: "../../public/fonts/karigaarSans-semibold.ttf",
-      weight: "600",
+      weight: "200",
       style: "normal",
     },
     {
@@ -20,6 +21,13 @@ const karigaar = localFont({
     },
   ],
   variable: "--font-karigaar",
+  display: "swap",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -36,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${karigaar.variable} h-full antialiased`}
+      className={`${karigaar.variable} ${openSans.variable} h-full antialiased`}
     >
       <body className={`${karigaar.className} min-h-full flex flex-col`}>
         <LenisProvider>
